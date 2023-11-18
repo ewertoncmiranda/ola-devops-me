@@ -12,6 +12,7 @@
 	<artifactId>ola-devops-me</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ola-devops-me</name>
+
 	<description>Ola Devops me.</description>
 	<properties>
 		<java.version>11</java.version>
