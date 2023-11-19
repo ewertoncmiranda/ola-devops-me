@@ -4,8 +4,6 @@ FROM openjdk:17-alpine
 # Define a working directory for the application
 WORKDIR /app
 
-RUN mvn clean package
-
 # Copy the JAR file into the container at /app
 COPY target/ola-devops* /app
 
