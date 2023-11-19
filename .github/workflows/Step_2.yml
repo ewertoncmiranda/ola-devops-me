@@ -28,14 +28,16 @@ jobs:
       id: tomasnocool
       uses: aws-actions/amazon-ecr-login@v2
       with:
-        registries: "436240875604"
+        registries: "436240875604.dkr.ecr.sa-east-1.amazonaws.com/tomasnocool"
 
     - name: Build, tag, and push docker image to Amazon ECR Public
       env:
-        REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
+
+        REGISTRY: "436240875604.dkr.ecr.sa-east-1.amazonaws.com/tomasnocool"
         REGISTRY_ALIAS: tomasnocoolalias
         REPOSITORY: tomasnocool
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: devopsme
       run: |
         docker build -t $IMAGE_TAG .
-        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+        docker tag $IMAGE_TAG:latest $REGISTRY:latest
+        docker push $REGISTRY:latest
