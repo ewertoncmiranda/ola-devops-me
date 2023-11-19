@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: Maven basics steps
+run-name: 02 - Maven basics steps
 on: [push]
 jobs:
   check-bats-version:

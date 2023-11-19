@@ -1,5 +1,5 @@
 name: Deploy to ECR
-run-name: 01-AWS Steps
+run-name: 01 - AWS Steps
 on: [push]
 
 jobs:
