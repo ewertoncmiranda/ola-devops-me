@@ -36,5 +36,5 @@ jobs:
         REGISTRY_ALIAS: tomasnocool
         IMAGE_TAG: devopsme
       run: |
-        docker build -t devopsme.
+        docker build -t devopsme .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:devopsme
