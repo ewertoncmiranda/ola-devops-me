@@ -4,13 +4,13 @@ FROM openjdk:17-alpine
 # Define a working directory for the application
 WORKDIR /app
 
-RUN mvn clean install
+RUN mvn clean install package
 
 # Copy the JAR file into the container at /app
-COPY .target/ola-devops-me-0.0.1.jar ./
+COPY target/ola-devops* /app
 
 # Expose the port that the application will run on
-EXPOSE 8080
+EXPOSE 8081
 
 # Specify the command to run your application
-CMD ["java", "-jar", "ola-devops-me-0.0.1.jar"]
+CMD ["java", "-jar", "ola-devops-me-0.0.1.jar","ola-devops*"]
