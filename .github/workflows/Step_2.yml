@@ -28,13 +28,24 @@ jobs:
       id: tomasnocool
       uses: aws-actions/amazon-ecr-login@v2
 
-    - name: Build, tag, and push docker image to Amazon ECR Public
+    - name: Build, tag, and push imagem para o Amazon ECR .
       env:
-
+        REGISTRY_DOCKER:  "ewertonmiranda/ola-devops-me"
         REGISTRY: "436240875604.dkr.ecr.sa-east-1.amazonaws.com/tomasnocool"
         REPOSITORY: tomasnocool
         IMAGE_TAG: devopsme
+
       run: |
         docker build -t $IMAGE_TAG .
         docker tag $IMAGE_TAG:latest $REGISTRY:latest
         docker push $REGISTRY:latest
+        docker push $REGISTRY_DOCKER:latest
+
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: task-definition.json
+        container-name: my-container
+        image: ${{ steps.build-image.outputs.image }}
+        
