@@ -37,4 +37,5 @@ jobs:
         IMAGE_TAG: devopsme
       run: |
         docker build -t devopsme .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:devopsme
+        docker tag devopsme:latest
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:devopsme:latest

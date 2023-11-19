@@ -5,7 +5,7 @@ FROM openjdk:17-alpine
 WORKDIR /app
 
 # Copy the JAR file into the container at /app
-COPY target/ola-devops-me-0.0.1.jar /app/ola-devops-me-0.0.1.jar
+COPY target/ola-devops-me-0.0.1.jar /ola-devops-me-0.0.1.jar
 
 # Expose the port that the application will run on
 EXPOSE 8080
