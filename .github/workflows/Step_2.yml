@@ -1,18 +1,12 @@
 name: Deploy to ECR
-
-on:
-
-  push:
-    branches: [ master ]
+run-name: AWS STEPS
+on: [push]
 
 jobs:
 
   build:
-
     name: Build Image
     runs-on: ubuntu-latest
-
-
     steps:
 
     - name: Check out code
