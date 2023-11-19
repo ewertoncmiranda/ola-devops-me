@@ -36,5 +36,5 @@ jobs:
         IMAGE_TAG: devopsme
       run: |
         docker build -t $IMAGE_TAG .
-        docker tag $IMAGE_TAG:latest $IMAGE_TAG:latest
+        docker tag $IMAGE_TAG:latest $REGISTRY:latest
         docker push $REGISTRY:latest
