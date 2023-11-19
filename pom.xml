@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.devops.miranda</groupId>
 	<artifactId>ola-devops-me</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>ola-devops-me</name>
 
 	<description>Ola Devops me.</description>
