@@ -34,7 +34,8 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REGISTRY_ALIAS: tomasnocool
+        REPOSITORY: tomasnocool
         IMAGE_TAG: devopsme
-      run: |
-        docker build -t devopsme .        
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:devopsme
+      run: |        
+        docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .        
+        docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
