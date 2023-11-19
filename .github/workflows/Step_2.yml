@@ -27,7 +27,6 @@ jobs:
     - name: Login to Amazon ECR
       id: tomasnocool
       uses: aws-actions/amazon-ecr-login@v2
-      registry-type: public
       with:
         registries: "436240875604"
 
