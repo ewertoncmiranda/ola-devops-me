@@ -33,14 +33,13 @@ jobs:
         REGISTRY_DOCKER:  "ewertonmiranda/ola-devops-me"
         REGISTRY: "436240875604.dkr.ecr.sa-east-1.amazonaws.com/tomasnocool"
         REPOSITORY: tomasnocool
-        IMAGE_TAG: devopsme
-        VERSION: 0.0.1
+        NAME : devopsme
+        TAG : 0.0.1
 
       run: |
-        docker build -t $REGISTRY:$IMAGE_TAG/$VERSION .
-        docker tag $REGISTRY:$IMAGE_TAG:$VERSION $REGISTRY:$VERSION
-        docker push $REGISTRY:$VERSION 
-        docker push $REGISTRY_DOCKER:$VERSION 
+        docker build -t $IMAGE_TAG .
+        docker tag $REGISTRY/$NAME:$TAG 
+        docker push $REGISTRY:$VERSION         
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
