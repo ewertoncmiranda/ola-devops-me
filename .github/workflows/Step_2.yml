@@ -39,7 +39,7 @@ jobs:
       run: |
         docker build -t $IMAGE_TAG .
         docker tag $IMAGE_TAG:$VERSION $REGISTRY:$IMAGE_TAG/$VERSION
-        docker push $REGISTRY:$IMAGE_TAG/$VERSION
+        docker push $REGISTRY/$IMAGE_TAG
         docker push $REGISTRY_DOCKER:$VERSION
 
     - name: Fill in the new image ID in the Amazon ECS task definition
