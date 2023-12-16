@@ -9,7 +9,7 @@ permissions:
 jobs:
 
   build:
-    name: Build Image
+    name: Configuração de Imagem
     runs-on: ubuntu-latest
     steps:
 
@@ -20,7 +20,6 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
 
       with:
-
         role-to-assume: arn:aws:iam::436240875604:role/github-actions-role
         aws-region: sa-east-1
 
@@ -28,19 +27,19 @@ jobs:
       id: tomasnocool
       uses: aws-actions/amazon-ecr-login@v2
 
-    - name: Build, tag, and push imagem para o Amazon ECR .
+    - name: Build, tag, and push imagem para o Amazon ECR
       env:
-        REGISTRY_DOCKER:  "ewertonmiranda/ola-devops-me"
+        REGISTRY_DOCKER: "ewertonmiranda/ola-devops-me"
         REGISTRY: "436240875604.dkr.ecr.sa-east-1.amazonaws.com/tomasnocool"
         REPOSITORY: tomasnocool
         IMAGE_TAG: devopsme
         VERSION: 0.0.1
 
       run: |
-        docker build -t $IMAGE_TAG/$VERSION .
-        docker tag $IMAGE_TAG:$VERSION $REGISTRY:$VERSION
-        docker push docker.io/$REGISTRY:$VERSION 
-        docker push docker.io/$REGISTRY_DOCKER:$VERSION
+        docker build -t $REGISTRY_DOCKER/$REPOSITORY:$VERSION .
+        docker tag $REGISTRY_DOCKER/$REPOSITORY:$VERSION $REGISTRY/$REPOSITORY:$VERSION
+        docker push $REGISTRY/$REPOSITORY:$VERSION
+        docker push $REGISTRY_DOCKER/$REPOSITORY:$VERSION
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
