@@ -30,7 +30,7 @@ jobs:
     - name: Build, tag, and push imagem para o Amazon ECR
       env:
         REGISTRY_DOCKER: "ewertonmiranda/ola-devops-me"
-        REGISTRY: "public.ecr.aws/z5d8b9e9/tomasnocool"
+        REGISTRY: "436240875604.dkr.ecr.sa-east-1.amazonaws.com"
         NAME : devopsme
         IMAGE_TAG: ${{ github.sha }}
         ECR_REGISTRY: public.ecr.aws/z5d8b9e9
