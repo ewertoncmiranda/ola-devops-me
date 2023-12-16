@@ -22,7 +22,7 @@
         }
       }
     }
-    // Pode adicionar mais definições de contêineres aqui, se necessário
+
   ],
   "requiresCompatibilities": ["EC2", "FARGATE"],
   "networkMode": "awsvpc",
