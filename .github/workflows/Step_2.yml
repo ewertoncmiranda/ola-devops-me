@@ -36,10 +36,9 @@ jobs:
         VERSION: 0.0.1
 
       run: |
-        docker build -t $REGISTRY_DOCKER/$REPOSITORY:$VERSION .
-        docker tag $REGISTRY_DOCKER/$REPOSITORY:$VERSION $REGISTRY/$REPOSITORY:$VERSION
-        docker push $REGISTRY/$REPOSITORY:$VERSION
-        docker push $REGISTRY_DOCKER/$REPOSITORY:$VERSION
+        docker build -t tomasnocool .
+        docker tag tomasnocool:latest public.ecr.aws/z5d8b9e9/tomasnocool:latest
+        docker push public.ecr.aws/z5d8b9e9/tomasnocool:latest
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
