@@ -8,7 +8,7 @@ WORKDIR /app
 COPY *target/ola-devops* /app
 
 # Expose the port that the application will run on
-EXPOSE 8081
+#EXPOSE 8081
 
 # Specify the command to run your application
-CMD ["java", "-jar", "docker.io/ola-devops-me-0.0.1.jar","docker.io/ola-devops*","ola-devops-me-0.0.1.jar","ola-devops*"]
+CMD ["java", "-jar", "docker.io/ola-devops-me-0.0.1.jar"]
