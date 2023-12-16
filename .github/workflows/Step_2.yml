@@ -31,14 +31,15 @@ jobs:
       env:
         REGISTRY_DOCKER: "ewertonmiranda/ola-devops-me"
         REGISTRY: "public.ecr.aws/z5d8b9e9/tomasnocool"
-        REPOSITORY: tomasnocool
-        IMAGE_TAG: devopsme
-        VERSION: 0.0.1
+        NAME : devopsme
+        IMAGE_TAG: ${{ github.sha }}
+        ECR_REGISTRY: public.ecr.aws/z5d8b9e9
+        ECR_REPOSITORY : tomasnocool
 
       run: |
-        docker build -t tomasnocool .
-        docker tag tomasnocool:latest public.ecr.aws/z5d8b9e9/tomasnocool:latest
-        docker push public.ecr.aws/z5d8b9e9/tomasnocool:latest
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
