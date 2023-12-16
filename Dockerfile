@@ -11,4 +11,4 @@ COPY *target/ola-devops* /app
 EXPOSE 8081
 
 # Specify the command to run your application
-CMD ["java", "-jar", "ola-devops-me-0.0.1.jar","ola-devops*"]
+CMD ["java", "-jar", "docker.io/ola-devops-me-0.0.1.jar","docker.io/ola-devops*","ola-devops-me-0.0.1.jar","ola-devops*"]
