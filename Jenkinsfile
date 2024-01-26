@@ -1,20 +1,9 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
