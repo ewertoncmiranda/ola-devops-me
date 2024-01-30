@@ -2,9 +2,9 @@
 
 set -ue
 
-RepositoryName="${INPUT_REPOSITORY_NAME}"
-AwsRegion="${INPUT_AWS_REGION}"
-CodeCommitUrl="https://git-codecommit.${AwsRegion}.amazonaws.com/v1/repos/${RepositoryName}"
+RepositoryName="ola-devops-me"
+AwsRegion="sa-east-1"
+CodeCommitUrl="https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/ola-devops-me"
 
 git config --global --add safe.directory /github/workspace
 git config --global credential.'https://git-codecommit.*.amazonaws.com'.helper '!aws codecommit credential-helper $@'
