@@ -4,12 +4,16 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - mvn clean install
+      - echo Build started on `date`
+      - mvn install
   post_build:
     commands:
-      - echo Build completed
+      - echo Build completed on `date`
 artifacts:
   files:
     - target/*.jar
