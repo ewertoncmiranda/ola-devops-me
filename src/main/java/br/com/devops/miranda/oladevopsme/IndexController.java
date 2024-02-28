@@ -11,7 +11,7 @@ public class IndexController {
 
     @GetMapping
     public String muitoBemVindo(){
-        return  "Seja bem vindo, meu pequeno gafanhoto!";
+        return  "Estamos avançando? !";
     }
 
 }
