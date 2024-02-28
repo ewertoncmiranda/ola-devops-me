@@ -6,13 +6,15 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo "--------->>>>>>>>>> FASE DE PRÉ BUILD <<<<<<<<<<---------"
   build:
     commands:
-      - echo Build started on `date`
+      - echo "--------->>>>>>>>>> CRIANDO ARQUIVO .JAR <<<<<<<<<<---------"
+      - mvn package
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo "--------->>>>>>>>>> SUCESSO PAPAI !! <<<<<<<<<<---------"
+
 artifacts:
   files:
     - target/*.jar
