@@ -7,13 +7,13 @@ phases:
   pre_build:
     commands:
       - echo "--------->>>>>>>>>> FASE DE PRÉ BUILD <<<<<<<<<<---------"
+      - mvn clean install
   build:
     commands:
       - echo "--------->>>>>>>>>> CRIANDO ARQUIVO .JAR <<<<<<<<<<---------"
       - mvn package
   post_build:
     commands:
-      - echo "--------->>>>>>>>>> SUCESSO PAPAI !! <<<<<<<<<<---------"
 
 artifacts:
   files:

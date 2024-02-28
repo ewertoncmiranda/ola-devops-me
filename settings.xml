@@ -1,0 +1,81 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <profiles>
+        <profile>
+            <id>repositories</id>
+            <repositories>
+                <!-- Central Repository -->
+                <repository>
+                    <id>central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <!-- Sonatype OSS Repository -->
+                <repository>
+                    <id>sonatype-oss-public</id>
+                    <url>https://oss.sonatype.org/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <!-- Spring Releases Repository -->
+                <repository>
+                    <id>spring-releases</id>
+                    <url>https://repo.spring.io/release</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <!-- Spring Snapshots Repository -->
+                <repository>
+                    <id>spring-snapshots</id>
+                    <url>https://repo.spring.io/snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <!-- Google Maven Repository -->
+                <repository>
+                    <id>google</id>
+                    <url>https://maven.google.com</url>
+                </repository>
+                <!-- JCenter Repository -->
+                <repository>
+                    <id>jcenter</id>
+                    <url>https://jcenter.bintray.com</url>
+                </repository>
+                <!-- Apache Releases Repository -->
+                <repository>
+                    <id>apache-releases</id>
+                    <url>https://repository.apache.org/content/repositories/releases</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <!-- Central Plugin Repository -->
+                <pluginRepository>
+                    <id>central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>repositories</activeProfile>
+    </activeProfiles>
+</settings>
