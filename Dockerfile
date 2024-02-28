@@ -23,7 +23,7 @@ WORKDIR /app
 COPY --from=build /build/target/*.jar /app/app.jar
 
 # Expõe a porta que o aplicativo Spring Boot está ouvindo
-EXPOSE 8081
+EXPOSE 8080
 
 # Comando para executar o aplicativo Spring Boot
 CMD ["java", "-jar", "app.jar"]
