@@ -25,7 +25,6 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
-          base: main
-          branch: feature_pr
+          branch: main
           title: 'Automated pull request from feature branch'
           body: 'This is an automated pull request from the feature branch triggered by a successful build.'
