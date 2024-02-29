@@ -18,7 +18,7 @@ public class IndexController {
     @GetMapping("/{teste}")
     public String muitoBemVindo(@PathVariable("teste") String teste)
     {
-        return  "Estamo por aqui ----> !"+ teste ;
+        return  "Estamos por aqui ----> !"+ teste ;
 
     }
 
