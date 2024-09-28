@@ -1,3 +1,4 @@
+/*
 package br.com.devops.miranda.oladevopsme;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,8 @@ public class BucketS3Controller {
         return new ResponseEntity<>(service.uploadArquivo(file), HttpStatus.OK);
     }
 
- /*   @GetMapping("/download/{fileName}")
+ */
+/*   @GetMapping("/download/{fileName}")
     public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable String fileName) {
         byte[] data = service.downloadArquivo(fileName);
         ByteArrayResource resource = new ByteArrayResource(data);
@@ -34,5 +36,7 @@ public class BucketS3Controller {
     @DeleteMapping("/delete/{fileName}")
     public ResponseEntity<String> deleteFile(@PathVariable String fileName) {
         return new ResponseEntity<>(service.excluirArquivos(fileName), HttpStatus.OK);
-    }*/
+    }*//*
+
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package br.com.devops.miranda.oladevopsme;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -51,3 +52,4 @@ public class AmazonS3BucketService {
 
     }
 
+*/
